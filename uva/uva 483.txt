@@ -1,0 +1,33 @@
+#include<iostream>
+#include<iomanip>
+#include<algorithm>
+#include<cmath>
+#include<math.h>
+#include<string>
+#include<vector>
+#include<stack>
+#include<set>
+using namespace std;
+int main()
+{
+	string s;
+	while(getline(cin,s))
+	{
+		string res="",x="",z="";
+		for(int i=0;i<s.size();i++)
+		{
+			if(s[i]==' ')
+			{
+				for(int j=x.size()-1;j>=0;j--)
+					res+=x[j];
+				res+=' ';
+				x="";
+			}
+			else
+				x+=s[i];
+		}
+		for(int j=x.size()-1;j>=0;j--)
+			res+=x[j];
+		cout <<res<<"\n";
+	}
+}
