@@ -1,0 +1,39 @@
+#include<iostream>
+#include<iomanip>
+#include<algorithm>
+#include<cmath>
+#include<math.h>
+#include<string>
+#include<vector>
+#include<stack>
+#include<set>
+using namespace std;
+string a[11]={"zero","one","two","three","four","five","six","seven","eight","nine","ten"};
+int x[11]={4,3,3,5,4,4,3,5,5,4,3};
+int main()
+{
+	int t,c;
+	string s;
+	cin>>t;
+	while(t--)
+	{
+		cin>>s;
+		for(int i=0;i<11;i++)
+		{
+		    c=0;
+			if(s.size()==x[i])
+			{
+				for(int j=0;j<x[i];j++)
+				{
+					if(s[j]!=a[i][j])
+						c++;
+				}
+				if(c<=1)
+				{
+					cout <<i<<"\n";
+					break;
+				}
+			}
+		}
+	}
+}
