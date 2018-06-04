@@ -1,0 +1,45 @@
+#include<iostream>
+#include<string>
+#include<iomanip>
+#include<algorithm>
+#include<cmath>
+#include<math.h>
+using namespace std;
+void mansour()
+{
+	std::ios_base::sync_with_stdio(0);
+	cin.tie(NULL);
+	cout.tie(NULL);
+}
+int main()
+{
+	mansour();
+	/*The First*/
+	long long n,b,m,d,c,a[25];
+	bool f=0;
+	cin>>b>>n;
+	while(b&&n)
+	{
+		for(int i=1;i<=b;i++)
+			cin>>a[i];
+		for(int i=1;i<=n;i++)
+		{
+			cin>>m>>d>>c;
+			a[m]-=c;
+			a[d]+=c;
+		}
+		for(int i=1;i<=b;i++)
+		{
+			if(a[i]<0)
+			{
+				cout <<"N\n";
+				f=1;
+				break;
+			}
+		}
+		if (!f)
+			cout <<"S\n";
+		cin>>b>>n;
+		f=0;
+	}
+}
