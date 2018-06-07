@@ -1,0 +1,51 @@
+#include<iostream>
+#include<string>
+#include<iomanip>
+#include<algorithm>
+#include<cmath>
+#include<set>
+#include<math.h>
+using namespace std;
+void mansour()
+{
+	std::ios_base::sync_with_stdio(0);
+	cin.tie(NULL);
+	cout.tie(NULL);
+}
+long long x[10000001];
+int main()
+{
+	mansour();
+	/*The First*/
+	set<string>st;
+	string s,as="";
+	long long i=0;
+	while(cin>>s)
+	{
+		for(int i=0;i<s.size();i++)
+		{
+			if(s[i]>='a'&&s[i]<='z')
+				as+=s[i];
+			else if(s[i]>='A'&&s[i]<='Z')
+			{
+			    s[i]+=32;
+				as+=s[i];
+			   // continue;
+			}
+			else
+			{
+			   // break;
+			    //as+=' ';
+			    if(as!="")
+				    st.insert(as);
+				as="";
+			}
+		}
+		if(as!="")
+			st.insert(as);
+	    as="";
+	}
+	set<string> :: iterator tr;
+	for(tr=st.begin();tr!=st.end();tr++)
+		cout<<*tr<<"\n";
+}
